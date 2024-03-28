@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    {% extends 'admin/base_site.html' %}
+
+    {% block content %}
+      <h1>Отправить сообщение</h1>
+      <form method="post" action="{% url 'users:answer' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value=Отправить />
+      </form>
+   
+    {% endblock %}
+  </body>
+</html>

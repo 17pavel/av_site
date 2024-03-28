@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "todoapp",
+			"path": "../.."
+		},
+		{
+			"name": ".vscode",
+			"path": "../../../../../stage19/.vscode"
+		}
+	],
+	"settings": {}
+}

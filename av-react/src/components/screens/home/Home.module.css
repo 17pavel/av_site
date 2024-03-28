@@ -1,0 +1,94 @@
+.item {
+    /* border: 1px solid gray; */
+    margin-bottom: 0px;
+    width: 45rem;
+    display: flex;
+    justify-content: space-between;
+    /* vertical-align: middle; */
+    /* position: relative; */
+    /* border: 1px solid; */
+    /* padding: 2rem; */
+    margin: 20px;
+}
+
+.image {
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    /* height: 30%; */
+    display: flex;
+    object-fit: contain;
+    border-radius: 7px;
+}
+
+.info {
+    padding: 10px;
+}
+
+.info h2 {
+    margin-bottom: 5px;
+    display: block;
+    align-items: center;
+    word-spacing: normal;
+
+}
+
+.info p {
+    margin-bottom: 10px;
+}
+
+.carItem {
+border: 1px solid #ccc;
+padding: 15px;
+}
+
+.showMore {
+margin-top: 20px;
+cursor: pointer;
+}
+
+.totalCount {
+margin-top: 10px;
+font-style: italic;
+}
+
+.carGrid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+}
+
+.carGrid img {
+    margin-bottom: 2px;
+    width: 30rem;
+    /* height: 50rem; */
+    display: flex;
+    justify-content: space-between;
+    /* vertical-align: middle; */
+    /* position: relative; */
+    /* border: 1px solid; */
+    /* padding: 2rem; */
+    
+}
+
+.carGrid .price {
+font-weight: bold;
+color: #4c00ff; /* Adjust color as needed */
+}
+
+.pagination {
+margin-top: 20px;
+}
+
+.pagination button {
+margin-right: 5px;
+cursor: pointer;
+}
+
+.carList {
+margin-top: 20px;
+}
+
+.carList p {
+font-weight: bold;
+}
