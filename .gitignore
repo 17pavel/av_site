@@ -1,6 +1,0 @@
-venv/
-npm_modules/
-.env
-.idea/
-*.pyc
-
