@@ -10,45 +10,45 @@ import styles from './Home.module.css';
 
 function Home() {
 
-  const [user, setUser] = React.useState(null);
-  const [token, setToken] = React.useState(null);
-  const [error, setError] = React.useState('');
+  // const [user, setUser] = React.useState(null);
+  // const [token, setToken] = React.useState(null);
+  // const [error, setError] = React.useState('');
 
-  async function login(user = null){ // default user to null
-    CarsService.login(user)
-      .then(response =>{        
-        setToken(response.data.token);     
-        setUser(user.username);
-        localStorage.setItem('token', response.data.token);
-        localStorage.setItem('user', user.username);
-        setError('');
-      })
-      .catch( e =>{
-        console.log('login', e);
-        setError(e.toString());       
-      });
-  }
+  // async function login(user = null){ // default user to null
+  //   CarsService.login(user)
+  //     .then(response =>{        
+  //       setToken(response.data.token);     
+  //       setUser(user.username);
+  //       localStorage.setItem('token', response.data.token);
+  //       localStorage.setItem('user', user.username);
+  //       setError('');
+  //     })
+  //     .catch( e =>{
+  //       console.log('login', e);
+  //       setError(e.toString());       
+  //     });
+  // }
 
-  async function logout(){
-    setToken('');
-    setUser('');
-    localStorage.setItem('token', '');
-    localStorage.setItem('user', ''); 
-  }
+  // async function logout(){
+  //   setToken('');
+  //   setUser('');
+  //   localStorage.setItem('token', '');
+  //   localStorage.setItem('user', ''); 
+  // }
 
-  async function signup(user = null){ // default user to null
-    CarsService.signup(user)
-      .then(response =>{
-        setToken(response.data.token);
-        setUser(user.username);
-        localStorage.setItem('token', response.data.token);
-        localStorage.setItem('user', user.username);
-      })
-      .catch( e =>{
-        console.log(e);
-        setError(e.toString());
-      })
-  }
+  // async function signup(user = null){ // default user to null
+  //   CarsService.signup(user)
+  //     .then(response =>{
+  //       setToken(response.data.token);
+  //       setUser(user.username);
+  //       localStorage.setItem('token', response.data.token);
+  //       localStorage.setItem('user', user.username);
+  //     })
+  //     .catch( e =>{
+  //       console.log(e);
+  //       setError(e.toString());
+  //     })
+  // }
 
   const { data, isLoading } = useQuery({
     queryKey: ['cars'],
