@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.catalog-brand{
+    margin: -5px 20px 30px;
+}
+
+
+.catalog-items {
+    display: flex;
+    margin: 0 -10px;
+    padding: 0;
+    list-style: none;
+    
+}
+
+.catalog-item {
+    
+    flex: 0 0 20%;
+    box-sizing: border-box;
+    max-width: 20%;
+}
+
+
+.catalog-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.brand {
+    text-decoration: none;
+    color:color(display-p3 0.055 0.5333 0.8745);
+
+    display: flex;
+    align-items: baseline;
+    padding: 6px 10px;
+    border-radius: 2px;
+    outline-offset: -5px;
+    white-space: nowrap;
+}
+
+.brand:hover {
+    color: red;
+}
+
