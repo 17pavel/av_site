@@ -11,10 +11,47 @@ from .serializers import *
 from .models import *
 
 
-class ItemList(generics.ListCreateAPIView):
+class CarList(generics.ListCreateAPIView):
     # queryset = Products.objects.all()
     serializer_class = ItemsSerializer
     permission_classes = [permissions.AllowAny]
+    
+    def get_queryset(self):
+        user = self.request.user        
+        return Products.objects.filter(category="cars")
+
+class MotoList(generics.ListCreateAPIView):
+    # queryset = Products.objects.all()
+    serializer_class = ItemsSerializer
+    permission_classes = [permissions.AllowAny]
+    
+    def get_queryset(self):
+        user = self.request.user        
+        return Products.objects.filter(category="moto")
+
+class TruckList(generics.ListCreateAPIView):
+    # queryset = Products.objects.all()
+    serializer_class = ItemsSerializer
+    permission_classes = [permissions.AllowAny]
+    
+    def get_queryset(self):
+        user = self.request.user        
+        return Products.objects.filter(category="truck")
+
+class SpecList(generics.ListCreateAPIView):
+    # queryset = Products.objects.all()
+    serializer_class = ItemsSerializer
+    permission_classes = [permissions.AllowAny]
+    
+    def get_queryset(self):
+        user = self.request.user        
+        return Products.objects.filter(category="spec")
+
+class ItemList(generics.ListCreateAPIView):
+    
+    serializer_class = ItemsSerializer
+    permission_classes = [permissions.AllowAny]
+    
     def get_queryset(self):
         user = self.request.user        
         return Products.objects.all()
@@ -64,7 +101,7 @@ class TodoListCreate(generics.ListCreateAPIView):
     # We specify TodoSerializer which we have earlier implemented
     serializer_class = TodoSerializer
     permission_classes = [permissions.IsAuthenticated]
-    queryset = Todo.objects.all()
+    # queryset = Todo.objects.all()
     def get_queryset(self):
         user = self.request.user        
         return Todo.objects.filter(user=user).order_by('-created')

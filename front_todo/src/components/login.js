@@ -20,8 +20,10 @@ const Login = props => {
 
   const login = () => {
     props.login({username: username, password: password});
-    props.history.push('/');
-  }  
+    const { from } = props.location.state || { from: { pathname: '/' } };
+    props.history.push(from);
+}
+
 
   return(
     <Container>

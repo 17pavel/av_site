@@ -100,6 +100,7 @@ class Parser_kufar:
                 break
             break
         try:
+            items=self.get_descr(items)
             self.save(items)
         except Exception as e:
             print(e)
@@ -114,6 +115,8 @@ class Parser_kufar:
                 el.description = descr
             except (KeyError, AttributeError):
                 pass
+
+        return data
 
     def save(self, data: list) -> None:
         products_instances = []

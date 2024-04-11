@@ -30,9 +30,6 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-
-
-
 class TodoSerializer(serializers.ModelSerializer):
     created = serializers.ReadOnlyField()
     completed = serializers.ReadOnlyField()
