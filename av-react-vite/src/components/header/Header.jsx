@@ -22,11 +22,10 @@ export default function Header() {
                             <button className='drpdwn'>Транспорт</button>
                             <div className="dropdown-content">
 
-                                <a href='/'>Автомобили с пробегом</a>
-                                <a href='/'>Новые автомобили</a>
-                                <a href='/'>Грузовой транспорт</a>
-                                <a href='/'>Мототехника</a>
-                                <a href='/'>Спецтехника</a>
+                                <a href='/car'>Автомобили с пробегом</a>
+                                <a href='/truck'>Грузовой транспорт</a>
+                                <a href='/moto'>Мототехника</a>
+                                <a href='/spec'>Спецтехника</a>
                                 
 
                             </div>

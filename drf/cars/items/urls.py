@@ -20,6 +20,7 @@ urlpatterns = [
     path('moto/', views.MotoList.as_view()),
     path('truck/', views.TruckList.as_view()),
     path('spec/', views.SpecList.as_view()),
+    path('tyres/', views.TyresList.as_view()),
     path('item/<int:pk>', views.ItemRetrive.as_view()),
     path('image/', views.ImageRetrive.as_view()),
     path('item/<int:pk>/update', views.ItemRetrieveUpdateDestroy.as_view()),

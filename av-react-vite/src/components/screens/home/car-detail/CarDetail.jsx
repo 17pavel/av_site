@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom"
 import { CarsService } from "../../../../service.js"
 import { useState, useEffect } from "react"
-import CarItem from "../car-item/CarItem"
+import CarItem from "../car-item/CarItem.jsx"
 import styles from '../Home.module.css'
 import Header from "../../../header/Header.jsx"
 

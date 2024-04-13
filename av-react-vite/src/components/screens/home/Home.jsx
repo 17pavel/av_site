@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import CarItem from './car-item/CarItem';
+import CarItem from './car-item/CarItem.jsx';
 import { Link } from 'react-router-dom'
 
 import { CarsService } from '../../../service.js';
@@ -55,7 +55,6 @@ function Home() {
     queryFn: () => CarsService.getAll()
   });
 
-  // const { user, setUser } = useContext(AuthContext);
   const [visibleItems, setVisibleItems] = useState(20);
 
   if (isLoading) return <p>Loading...</p>;

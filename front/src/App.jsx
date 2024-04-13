@@ -8,14 +8,9 @@ import AddTodo from './components/add-todo';
 import TodosList from './components/todos-list';
 import Login from './components/login';
 import Signup from './components/signup';
-
-// import Nav from 'react-bootstrap/Nav';
-// import Navbar from 'react-bootstrap/Navbar';
-// import Container from 'react-bootstrap/Navbar';
-
-import CarsService from './services/items';
+import DataService from './services/items';
 import CarItem from './components/CarItem';
-// import CarDetail from './components/CarDetail';
+import CarDetail from './components/CarDetail';
 
 function App() {
   const [user, setUser] = React.useState(localStorage.getItem('user') || null);
@@ -23,7 +18,7 @@ function App() {
   const [error, setError] = React.useState('');
 
   async function login(user = null){ // default user to null
-    CarsService.login(user)
+    DataService.login(user)
       .then(response =>{        
         setToken(response.data.token);     
         setUser(user.username);
@@ -45,7 +40,7 @@ function App() {
   }
 
   async function signup(user = null){ // default user to null
-    CarsService.signup(user)
+    DataService.signup(user)
       .then(response =>{
         setToken(response.data.token);
         setUser(user.username);
@@ -87,7 +82,7 @@ function App() {
                         <div className='dropdown'>
                             <button className='drpdwn'>Запчасти и шины</button>
                             <div className="dropdown-content">
-                                <a href='/'>Шины и диски</a>
+                                <a href='/tyres'>Шины и диски</a>
                                 <a href='/'>Б/у запчасти для авто</a>
                                 <a href='/'>Весь авто на запчасти</a>
                                 <a href='/'>Автотовары и расходники</a>
@@ -136,17 +131,34 @@ function App() {
       <div className="container mt-4">
         <Switch>	
           <Route exact path={["/", "/item"]} render={(props) =>
-            <CarItem {...props} token={token} endpoint ="item"/>
+            <CarItem {...props} token={token} endpoint ="item/"/>
           }>
           </Route>
-          <Route exact path={["/", "/car"]} render={(props) =>
-            <CarItem {...props} token={token} endpoint ="item"/>
+          <Route exact path={[, "/item/:id/"]} render={(props) =>
+            <CarDetail {...props}  id = ":id/"/>
           }>
           </Route>
-          <Route exact path={["/", "/moto"]} render={(props) =>
-            <CarItem {...props} token={token} endpoint ="moto"/>
+          <Route exact path={["/car"]} render={(props) =>
+            <CarItem {...props} token={token} endpoint ="car/"/>
           }>
           </Route>
+          <Route exact path={["/moto"]} render={(props) =>
+            <CarItem {...props} token={token} endpoint ="moto/"/>
+          }>
+          </Route>
+          <Route exact path={["/truck"]} render={(props) =>
+            <CarItem {...props} token={token} endpoint ="truck/"/>
+          }>
+          </Route>
+          <Route exact path={["/spec"]} render={(props) =>
+            <CarItem {...props} token={token} endpoint ="spec/"/>
+          }>
+          </Route>
+          <Route exact path={["/tyres"]} render={(props) =>
+            <CarItem {...props} token={token} endpoint ="tyres/"/>
+          }>
+          </Route>
+          
           <Route exact path={["/todos"]} render={(props) =>
             <TodosList {...props} token={token} />
           }>

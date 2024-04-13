@@ -15,10 +15,9 @@ class CarList(generics.ListCreateAPIView):
     # queryset = Products.objects.all()
     serializer_class = ItemsSerializer
     permission_classes = [permissions.AllowAny]
-    
     def get_queryset(self):
         user = self.request.user        
-        return Products.objects.filter(category="cars")
+        return Products.objects.filter(category=4)
 
 class MotoList(generics.ListCreateAPIView):
     # queryset = Products.objects.all()
@@ -27,7 +26,7 @@ class MotoList(generics.ListCreateAPIView):
     
     def get_queryset(self):
         user = self.request.user        
-        return Products.objects.filter(category="moto")
+        return Products.objects.filter(category=3)
 
 class TruckList(generics.ListCreateAPIView):
     # queryset = Products.objects.all()
@@ -36,7 +35,7 @@ class TruckList(generics.ListCreateAPIView):
     
     def get_queryset(self):
         user = self.request.user        
-        return Products.objects.filter(category="truck")
+        return Products.objects.filter(category=5)
 
 class SpecList(generics.ListCreateAPIView):
     # queryset = Products.objects.all()
@@ -45,12 +44,24 @@ class SpecList(generics.ListCreateAPIView):
     
     def get_queryset(self):
         user = self.request.user        
-        return Products.objects.filter(category="spec")
+        return Products.objects.filter(category=6)
+        
+class TyresList(generics.ListCreateAPIView):
+    # queryset = Products.objects.all()
+    serializer_class = ItemsSerializer
+    permission_classes = [permissions.AllowAny]
+    
+    def get_queryset(self):
+        user = self.request.user        
+        return Products.objects.filter(category=7)
+  
 
 class ItemList(generics.ListCreateAPIView):
     
     serializer_class = ItemsSerializer
     permission_classes = [permissions.AllowAny]
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    search_fields = ["category", "name"]
     
     def get_queryset(self):
         user = self.request.user        

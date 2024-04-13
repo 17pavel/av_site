@@ -92,3 +92,20 @@ margin-top: 20px;
 .carList p {
 font-weight: bold;
 }
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 30px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    background-color: green;
+    max-width: 140px;
+
+}

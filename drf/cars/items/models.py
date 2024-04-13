@@ -43,7 +43,7 @@ class Products(models.Model):
     price = models.DecimalField(default=0.00, max_digits=15, decimal_places=2, verbose_name='Цена')
     discount = models.DecimalField(default=0.00, max_digits=4, decimal_places=2, verbose_name='Скидка в %')
     quantity = models.PositiveIntegerField(default=1, verbose_name='Количество')
-    category = models.ForeignKey(Categories, on_delete=models.CASCADE, verbose_name='Категория')
+    category = models.ForeignKey(Categories, on_delete=models.CASCADE, related_name="product",verbose_name='Категория')
 
 
     class Meta:
@@ -72,7 +72,7 @@ class Products(models.Model):
 class Images(models.Model):
 
     image = models.CharField(max_length=255, unique=True)
-    product = models.ForeignKey(Products, on_delete=models.CASCADE, related_name="images")
+    product = models.ForeignKey(Products, on_delete=models.CASCADE, related_name="images", verbose_name='Продукт')
 
     class Meta:
         db_table="images"
