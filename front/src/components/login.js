@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
+
  
 const Login = props => {
   
@@ -19,10 +20,11 @@ const Login = props => {
   }  
 
   const login = () => {
-    props.login({username: username, password: password});
+    props.login({ username: username, password: password,});
     const { from } = props.location.state || { from: { pathname: '/' } };
     props.history.push(from);
-}
+  }
+
 
 
   return(
@@ -45,7 +47,8 @@ const Login = props => {
             value={password} 
             onChange={onChangePassword}
           />
-        </Form.Group>        
+        </Form.Group> 
+       
         <Button variant="primary" onClick={login}>
           Login
         </Button>
