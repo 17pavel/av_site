@@ -4,12 +4,8 @@ from fastapi.routing import APIRouter
 
 from api.handlers import user_router
 
-#########################
-# BLOCK WITH API ROUTES #
-#########################
-
 # create instance of the app
-app = FastAPI(title="luchanos-oxford-university")
+app = FastAPI(title="cars.by")
 
 # create the instance for the routes
 main_api_router = APIRouter()

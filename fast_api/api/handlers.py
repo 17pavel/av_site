@@ -27,5 +27,5 @@ async def _create_new_user(body: UserCreate, db) -> ShowUser:
 
 
 @user_router.post("/", response_model=ShowUser)
-async def create_user(body: UserCreate, db: AsyncSession = Depends(get_db)) -> ShowUser:
+async def create_user(body: UserCreate, db: AsyncSession = Depends(get_db)):
     return await _create_new_user(body, db)
