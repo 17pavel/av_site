@@ -22,8 +22,8 @@ def send_all(to_sent):
 
 
 # 3. Отправить пользователю ответ полученный из Джанго Админки
-def sent_answer(messages):
-    for message in messages:
+def sent_answer(message):
+    # for message in messages:
         if message.answer:
             bot.send_message(message.external_id, message.answer)
 

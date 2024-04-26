@@ -126,7 +126,7 @@ class Data(BaseCommand):
         try:
             scheduler.add_job(
                 my_job_first,
-                next_run_time=jobs.filter(triger='second')[0].date_create,
+                next_run_time=jobs.filter(triger='first')[0].date_create,
                 trigger=CronTrigger(hour=f"*/{jobs.filter(triger='first')[0].period}"),
                 id="my_job_first",  # The `id` assigned to each job MUST be unique
                 max_instances=11,
