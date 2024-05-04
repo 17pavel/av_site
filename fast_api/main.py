@@ -2,7 +2,7 @@ from fastapi import FastAPI
 import uvicorn
 from fastapi.routing import APIRouter
 
-from api.handlers import user_router
+from fast_api.api.routers import router
 
 # create instance of the app
 app = FastAPI(title="cars.by")
@@ -11,7 +11,7 @@ app = FastAPI(title="cars.by")
 main_api_router = APIRouter()
 
 # set routes to the app instance
-main_api_router.include_router(user_router, prefix="/user", tags=["user"])
+main_api_router.include_router(router, prefix="/api", tags=["api"])
 app.include_router(main_api_router)
 
 if __name__ == "__main__":
