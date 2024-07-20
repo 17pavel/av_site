@@ -17,7 +17,7 @@ class CarList(generics.ListCreateAPIView):
     permission_classes = [permissions.AllowAny]
     def get_queryset(self):
         user = self.request.user        
-        return Products.objects.filter(category=4)
+        return Products.objects.filter(category=1)
 
 class MotoList(generics.ListCreateAPIView):
     # queryset = Products.objects.all()
@@ -26,7 +26,7 @@ class MotoList(generics.ListCreateAPIView):
     
     def get_queryset(self):
         user = self.request.user        
-        return Products.objects.filter(category=3)
+        return Products.objects.filter(category=2)
 
 class TruckList(generics.ListCreateAPIView):
     # queryset = Products.objects.all()
@@ -35,7 +35,7 @@ class TruckList(generics.ListCreateAPIView):
     
     def get_queryset(self):
         user = self.request.user        
-        return Products.objects.filter(category=5)
+        return Products.objects.filter(category=3)
 
 class SpecList(generics.ListCreateAPIView):
     # queryset = Products.objects.all()
@@ -44,7 +44,7 @@ class SpecList(generics.ListCreateAPIView):
     
     def get_queryset(self):
         user = self.request.user        
-        return Products.objects.filter(category=6)
+        return Products.objects.filter(category=4)
         
 class TyresList(generics.ListCreateAPIView):
     # queryset = Products.objects.all()
@@ -53,7 +53,7 @@ class TyresList(generics.ListCreateAPIView):
     
     def get_queryset(self):
         user = self.request.user        
-        return Products.objects.filter(category=7)
+        return Products.objects.filter(category=5)
   
 
 class ItemList(generics.ListCreateAPIView):
