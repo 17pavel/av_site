@@ -47,5 +47,3 @@ class UserCreate(BaseModel):
             )
         return value
 
-
-

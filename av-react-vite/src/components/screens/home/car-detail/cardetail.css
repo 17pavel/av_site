@@ -1,9 +1,0 @@
-.car_img {
-    background-size: cover;
-    background-position: center;
-    width: 50%;
-    /* height: 30%; */
-    display: flex;
-    object-fit: contain;
-    border-radius: 7px;
-}

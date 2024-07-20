@@ -69,6 +69,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'cars.urls'
 
 TEMPLATES = [
+        
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
@@ -89,9 +90,9 @@ WSGI_APPLICATION = 'cars.wsgi.application'
 WSGI_INPUT_BUFFER_SIZE = 8192  # adjust the buffer size as needed
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
-    'http://127.0.0.1:3000',
+    'http://0.0.0.0:3000',
     'http://localhost:5173',
-    'http://127.0.0.1:5173',
+    'http://0.0.0.0:5173',
 ]
 
 # CORS_ALLOW_ALL_ORIGINS = True
